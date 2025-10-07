@@ -26,8 +26,6 @@ The **odometry (2×2)** and **GPS-compass (3×3)** covariance matrices were esti
 
 The simulation ran several short movements with known true positions. The robot was commanded to move straight toward random targets, and the difference between odometry-estimated and true positions was recorded. The variance of these errors defined the σ values for the covariance matrices.
 
-> 🖼️ **Figure 1.** Placeholder for covariance matrix estimation illustration  
-> `![Covariance Matrix Illustration](path/to/figure1.png)`
 
 ---
 
@@ -37,8 +35,9 @@ Since the GPS operated at 1 Hz and simulation time step was 10 ms, GPS readings 
 
 Additionally, a **median filter** was applied to LiDAR range data to remove spikes before integration.
 
-> 🖼️ **Figure 2.** Placeholder for EKF trajectory or data fusion result  
-> `![EKF Trajectory]("C:\Users\ferna\Downloads\Picture1.jpg")`
+> 🖼️ **Figure 1.** Robot Final path vs. True path.  
+> ![EKF Trajectory](https://github.com/FFLSantos/Agricultural-Robot-Simulation-for-Tree-Nursery-Inspection/raw/main/Picture1.jpg)
+
 
 ---
 
