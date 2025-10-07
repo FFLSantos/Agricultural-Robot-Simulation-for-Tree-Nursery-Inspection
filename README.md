@@ -35,7 +35,7 @@ Since the GPS operated at 1 Hz and simulation time step was 10 ms, GPS readings 
 
 Additionally, a **median filter** was applied to LiDAR range data to remove spikes before integration.
 
-> 🖼️ **Figure 1.** Robot Final path vs. True path.  
+> **Figure 1.** Robot Final path vs. True path.  
 > ![EKF Trajectory](https://github.com/FFLSantos/Agricultural-Robot-Simulation-for-Tree-Nursery-Inspection/raw/main/Picture1.jpg)
 
 
@@ -46,11 +46,19 @@ The robot traversed a simulated orchard using only onboard sensors (no access to
 To replicate real-world conditions such as tall grass or twigs, **random noise** was added to the bitmap.  
 This produced scattered, isolated pixels in the LiDAR output.
 
-> 🖼️ **Figure 3.** Original orchard bitmap  
-> `![Original Bitmap](path/to/figure3.png)`
+**Figure 2.** Noisy orchard bitmap simulating field conditions  
+![Noisy Bitmap](https://github.com/FFLSantos/Agricultural-Robot-Simulation-for-Tree-Nursery-Inspection/raw/main/Picture2.jpg)
 
-> 🖼️ **Figure 4.** Noisy orchard bitmap simulating field conditions  
-> `![Noisy Bitmap](path/to/figure4.png)`
+---
+
+**Figure 3.** Estimated map of the perceived environment  
+![Estimated Map](https://github.com/FFLSantos/Agricultural-Robot-Simulation-for-Tree-Nursery-Inspection/raw/main/Picture3.jpg)
+
+---
+
+**Figure 4.** Filtered map  
+![Filtered Map](https://github.com/FFLSantos/Agricultural-Robot-Simulation-for-Tree-Nursery-Inspection/raw/main/Picture4.jpg)
+
 
 ---
 
