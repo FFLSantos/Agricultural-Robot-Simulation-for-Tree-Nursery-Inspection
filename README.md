@@ -1,2 +1,77 @@
-# Agricultural-Robot-Simulation-for-Tree-Nursery-Inspection
-A computer simulation of a mobile robot inspecting a tree nursery. The robot, equipped with GPS, wheel odometry, and a 2D LiDAR, must traverse orchard rows, detect and localize trees, estimate trunk diameters, and output a per‑tree report for grower decision‑making.
+# Agricultural Robot Simulation — Tree Nursery Inspection
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![MATLAB](https://img.shields.io/badge/MATLAB-R2020b%2B-blue)
+![Status](https://img.shields.io/badge/status-simulation-green)
+
+> **Course:** EBS 289K — Sensors & Actuators in Agricultural Automation (UC Davis)  
+> **Instructor:** Prof. Stavros Vougioukas  
+> **Authors:** Fernando Ferreira Lima dos Santos, Achala Rao  
+> **Term:** Spring 2021
+
+## Introduction
+This project consisted of simulating an agricultural robot inspecting a tree nursery.  
+The robot was equipped with a **GPS**, an **odometer**, and a **2D LiDAR**, and its objectives were:
+- Traverse the orchard block autonomously.  
+- Detect and localize trees.  
+- Estimate the diameter of each tree trunk.  
+- Output a text file with all tree data.  
+
+The main tasks included implementing the robot’s **Guidance, Navigation, and Control (GNC)** system, developing an **Extended Kalman Filter (EKF)** for state estimation, and using **image processing techniques** for tree detection and diameter estimation.
+
+---
+
+## Task 1 – Estimate the Odometry and GPS/Compass Covariance Matrices
+The **odometry (2×2)** and **GPS-compass (3×3)** covariance matrices were estimated using the script `Covariance_matrix.m`.  
+
+The simulation ran several short movements with known true positions. The robot was commanded to move straight toward random targets, and the difference between odometry-estimated and true positions was recorded. The variance of these errors defined the σ values for the covariance matrices.
+
+> 🖼️ **Figure 1.** Placeholder for covariance matrix estimation illustration  
+> `![Covariance Matrix Illustration](path/to/figure1.png)`
+
+---
+
+## Task 2 – Implement an Extended Kalman Filter (EKF)
+The `EKF.m` script fused **odometry**, **GPS**, and **compass** measurements.  
+Since the GPS operated at 1 Hz and simulation time step was 10 ms, GPS readings were available every 100 iterations. The EKF used these readings as corrections to the predicted state from odometry.
+
+Additionally, a **median filter** was applied to LiDAR range data to remove spikes before integration.
+
+> 🖼️ **Figure 2.** Placeholder for EKF trajectory or data fusion result  
+> `![EKF Trajectory]("C:\Users\ferna\Downloads\Picture1.jpg")`
+
+---
+
+## Task 3 – Traverse the Orchard Block
+The robot traversed a simulated orchard using only onboard sensors (no access to the ground-truth map).  
+To replicate real-world conditions such as tall grass or twigs, **random noise** was added to the bitmap.  
+This produced scattered, isolated pixels in the LiDAR output.
+
+> 🖼️ **Figure 3.** Original orchard bitmap  
+> `![Original Bitmap](path/to/figure3.png)`
+
+> 🖼️ **Figure 4.** Noisy orchard bitmap simulating field conditions  
+> `![Noisy Bitmap](path/to/figure4.png)`
+
+---
+
+## Task 4 – Detect and Localize Trees; Estimate Their Diameters
+Tree detection used the script `treeDetector.m`, which performed:
+1. **Cropping** to remove border noise.  
+2. **Binary conversion** of the LiDAR probability grid.  
+3. **Median filtering** to remove isolated pixels.  
+4. **Circle detection** to identify trunk shapes and diameters.  
+5. **Coordinate correction** and **labeling** of detected trees.
+
+Results were exported to a `.txt` file listing all detected trees.
+
+> 🖼️ **Figure 5.** LiDAR-perceived world before preprocessing  
+> `![LiDAR Raw](path/to/figure5.png)`
+
+> 🖼️ **Figure 6.** Processed probability map after filtering and detection  
+> `![LiDAR Processed](path/to/figure6.png)`
+
+---
+
+## Task 5 – Write Output File
+The output was a text file named `report.txt` with the following format:
