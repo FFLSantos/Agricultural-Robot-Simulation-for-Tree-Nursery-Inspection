@@ -71,16 +71,13 @@ Tree detection used the script `treeDetector.m`, which performed:
 5. **Coordinate correction** and **labeling** of detected trees.
 
 Results were exported to a `.txt` file listing all detected trees.
----
 
 **Figure 5.** Tree position error  
-![Filtered Map](https://github.com/FFLSantos/Agricultural-Robot-Simulation-for-Tree-Nursery-Inspection/raw/main/Picture5.jpg)
----
+![Tree Position Error](https://github.com/FFLSantos/Agricultural-Robot-Simulation-for-Tree-Nursery-Inspection/raw/main/Picture5.jpg)
 
-**Figure 6.** Tree diameter error
-![Filtered Map](https://github.com/FFLSantos/Agricultural-Robot-Simulation-for-Tree-Nursery-Inspection/raw/main/Picture6.jpg)
+**Figure 6.** Tree diameter error  
+![Tree Diameter Error](https://github.com/FFLSantos/Agricultural-Robot-Simulation-for-Tree-Nursery-Inspection/raw/main/Picture6.jpg)
 
----
 
 ## Task 5 – Write Output File
 The output was a text file named `report.txt` with the following format:
