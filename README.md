@@ -72,11 +72,11 @@ Tree detection used the script `treeDetector.m`, which performed:
 
 Results were exported to a `.txt` file listing all detected trees.
 
-> 🖼️ **Figure 5.** LiDAR-perceived world before preprocessing  
-> `![LiDAR Raw](path/to/figure5.png)`
+**Figure 5.** Tree position error  
+![Filtered Map](https://github.com/FFLSantos/Agricultural-Robot-Simulation-for-Tree-Nursery-Inspection/raw/main/Picture5.jpg)
 
-> 🖼️ **Figure 6.** Processed probability map after filtering and detection  
-> `![LiDAR Processed](path/to/figure6.png)`
+**Figure 6.** Tree diameter error
+![Filtered Map](https://github.com/FFLSantos/Agricultural-Robot-Simulation-for-Tree-Nursery-Inspection/raw/main/Picture6.jpg)
 
 ---
 
